@@ -1,0 +1,163 @@
+<section class="portfolio-home" id="portfolio">
+
+    <div class="container">
+
+        <p class="section-tag">
+            Portfolio
+        </p>
+
+        <h2>
+            Algunos trabajos destacados
+        </h2>
+
+        <p class="portfolio-text">
+            Una selección de proyectos realizados para empresas, industrias y organizaciones.
+        </p>
+
+        <div class="portfolio-grid">
+
+            <!-- VIDEO  -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image">
+
+                    <img class="thumb"
+                        src="/thumbnails/1.jpg"
+                        alt="Puma Energy">
+
+                    <video
+                        class="preview"
+                        muted
+                        loop
+                        playsinline>
+
+                        <source src="/videos/1.mp4" type="video/mp4">
+
+                    </video>
+
+                    <button
+                        class="play-button"
+                        data-video="/videos/1.mp4">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <span>Industria</span>
+
+                    <h3>Puma Energy</h3>
+
+                    <p>TEST.</p>
+
+                </div>
+                
+
+            </article>
+
+            <!-- Repetí la misma estructura para los videos 2 al 6 -->
+            <!-- Cambiando únicamente thumbnail, video y textos -->
+
+        </div>
+
+        <div class="portfolio-button">
+
+            <a href="/portfolio" class="btn btn-primary">
+
+                Ver todos los proyectos
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="video-modal">
+
+    <div class="video-modal-content">
+
+        <button class="close-video">
+
+            ✕
+
+        </button>
+
+        <video id="portfolioPlayer" controls>
+
+            <source id="portfolioSource">
+
+        </video>
+
+    </div>
+
+</div>
+
+<script is:inline>
+
+const modal = document.querySelector(".video-modal");
+const player = document.getElementById("portfolioPlayer");
+const source = document.getElementById("portfolioSource");
+
+document.querySelectorAll(".play-button").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        source.src = btn.dataset.video;
+
+        player.load();
+
+        modal.classList.add("show");
+
+        player.play();
+
+    });
+
+});
+
+document.querySelector(".close-video").addEventListener("click", () => {
+
+    player.pause();
+
+    modal.classList.remove("show");
+
+});
+
+modal.addEventListener("click", e => {
+
+    if(e.target === modal){
+
+        player.pause();
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+document.querySelectorAll(".portfolio-card").forEach(card => {
+
+    const preview = card.querySelector(".preview");
+
+    card.addEventListener("mouseenter", () => {
+
+        preview.play();
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        preview.pause();
+
+        preview.currentTime = 0;
+
+    });
+
+});
+
+</script>

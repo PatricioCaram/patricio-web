@@ -1,0 +1,35 @@
+---
+const { video } = Astro.props;
+---
+
+<article
+  class="video-card">
+
+  <div
+    class="video-thumb"
+    data-video={video.video}>
+
+    <img
+      src={video.thumbnail}
+      alt={video.titulo}
+    >
+
+    <div class="play-button">
+
+      ▶
+
+    </div>
+
+  </div>
+
+  <div class="video-info">
+
+    <span>{video.categoria}</span>
+
+    <h3>{video.titulo}</h3>
+
+    <p>{video.descripcion}</p>
+
+  </div>
+
+</article>

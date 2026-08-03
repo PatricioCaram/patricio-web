@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+
+const { title = "Patricio Caram" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>{title}</title>
+
+  <meta
+    name="description"
+    content="Comunicación audiovisual para empresas, industrias y organizaciones. Producción de videos institucionales, industriales y corporativos."
+  />
+
+  <meta
+    name="keywords"
+    content="video institucional, comunicación audiovisual, producción audiovisual, filmmaker corporativo, videos industriales, Patricio Caram"
+  />
+
+  <meta name="author" content="Patricio Caram" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Patricio Caram | Comunicación Audiovisual para Empresas" />
+
+  <meta
+    property="og:description"
+    content="Producción audiovisual para empresas, industrias y organizaciones."
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta property="og:image" content="/imagenes/og-image.jpg" />
+
+  <meta property="og:locale" content="es_AR" />
+</head>
+<body>
+
+<header class="header">
+
+  <div class="container nav">
+
+    <div class="logo">
+      <a href="/" class="logo">
+    <strong>Patricio Caram</strong>
+    <span>Comunicación Audiovisual</span>
+</a>
+    </div>
+
+<nav>
+
+  <a href="/#casos">Casos</a>
+
+  <a href="/#clientes">Clientes</a>
+
+  <a href="/portfolio">Portfolio</a>
+
+  <a href="/#sobre-mi">Sobre mí</a>
+
+  <a href="/#contacto">Contacto</a>
+
+</nav>
+
+  </div>
+
+</header>
+
+<main>
+  <slot />
+</main>
+
+</body>
+
+</html>
