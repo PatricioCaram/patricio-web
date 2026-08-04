@@ -2111,3 +2111,60 @@ COMO TRABAJO
     box-shadow:0 25px 70px rgba(0,0,0,.12);
 
 }
+@media (max-width:768px){
+
+.hero{
+
+    min-height:100svh;
+
+}
+
+.hero-content{
+
+    width:92%;
+
+    padding-inline:0;
+
+}
+
+.hero-kicker{
+
+    font-size:1rem;
+
+}
+
+.hero h1{
+
+    font-size:clamp(2.6rem,10vw,3.5rem);
+
+    line-height:1.05;
+
+}
+
+.hero-description{
+
+    font-size:1.05rem;
+
+    line-height:1.7;
+
+    margin:24px 0 36px;
+
+}
+
+.hero-actions{
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.hero-actions a{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
